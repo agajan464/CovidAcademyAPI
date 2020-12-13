@@ -16,9 +16,9 @@ public class SingleStateController {
     public SingleStateController(SingleStateService singleStateService) {
         this.singleStateService = singleStateService;
     }
-    @GetMapping
-    public SingleStateDateStats getSpecificStateStats(@PathVariable String state, Date date) {
-        return singleStateService.getSpecificStateDateStats();
+    @GetMapping("/{state}/{date}")
+    public SingleStateDateStats getSpecificStateStats(@PathVariable String state, @PathVariable String date) {
+        return singleStateService.getSpecificStateDateStats(state, date);
     }
 
 }

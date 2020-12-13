@@ -15,7 +15,7 @@ public class SingleStateService {
         this.specificTrackingApi = specificTrackingApi;
     }
 
-    public SingleStateDateStats getSpecificStateDateStats() {
-        return specificTrackingApi.getSpecificStateDateStats();
+    public SingleStateDateStats getSpecificStateDateStats(String state, String date) {
+        return specificTrackingApi.getSpecificStateDateStats(state, date);
     }
 }

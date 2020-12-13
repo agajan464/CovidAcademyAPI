@@ -14,7 +14,7 @@ public class SpecificTrackingApiRepository implements SpecificTrackingApi {
             this.restTemplate = restTemplate;
         }
         @Override
-        public SingleStateDateStats getSpecificStateDateStats() {
-            return restTemplate.getForObject(url, SingleStateDateStats.class);
+        public SingleStateDateStats getSpecificStateDateStats(String state, String date) {
+            return restTemplate.getForObject(String.format(url, state, date), SingleStateDateStats.class);
         }
 }

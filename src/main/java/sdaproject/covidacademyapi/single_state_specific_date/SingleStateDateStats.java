@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class SingleStateDateStats {
     private String state;
-    private Date date;
+    private String date;
     private int positive;
     private int negative;
     private int deathConfirmed;
@@ -18,11 +18,11 @@ public class SingleStateDateStats {
         this.state = state;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
