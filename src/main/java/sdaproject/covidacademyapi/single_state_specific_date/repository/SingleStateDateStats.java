@@ -1,4 +1,4 @@
-package sdaproject.covidacademyapi.single_state_specific_date;
+package sdaproject.covidacademyapi.single_state_specific_date.repository;
 
 import java.util.Date;
 

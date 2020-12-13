@@ -1,8 +1,11 @@
-package sdaproject.covidacademyapi.single_state_specific_date;
+package sdaproject.covidacademyapi.single_state_specific_date.repository;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.client.RestTemplate;
+import sdaproject.covidacademyapi.single_state_specific_date.repository.SingleStateDateStats;
+import sdaproject.covidacademyapi.single_state_specific_date.repository.SpecificTrackingApi;
+
 @Repository
 public class SpecificTrackingApiRepository implements SpecificTrackingApi {
 
