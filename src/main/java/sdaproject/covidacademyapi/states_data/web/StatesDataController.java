@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RestController;
 import sdaproject.covidacademyapi.states_data.repository.StatesData;
 import sdaproject.covidacademyapi.states_data.service.StatesDataService;
 
+import java.util.List;
+
 @RequestMapping("/data")
 @RestController
 public class StatesDataController {
@@ -18,7 +20,7 @@ public class StatesDataController {
     }
 
     @GetMapping
-    public StatesData[] getStatesData() {
+    public List<StatesData> getStatesData() {
         return statesDataService.getAllStatesData();
     }
 }
