@@ -25,8 +25,7 @@ public class SingleStateService {
         this.statesDataService = statesDataService;
 
     }
-    @Autowired
-    StatesDataDbRepository statesDataDbRepository;
+
 
 
     public SingleStateDateStats getSpecificStateDateStats(String state, String date) {
