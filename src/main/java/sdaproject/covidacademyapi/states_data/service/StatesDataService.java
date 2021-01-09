@@ -6,7 +6,6 @@ import sdaproject.covidacademyapi.states_data.repository.StatesData;
 import sdaproject.covidacademyapi.states_data.repository.StatesDataApi;
 import sdaproject.covidacademyapi.states_data.repository.StatesDataDbRepository;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -40,6 +39,13 @@ public class StatesDataService {
             fetchStatesData();
         }
         return statesDataDbRepository.findByNameIgnoreCase(name);
+    }
 
+    public Optional<StatesData> getStateById(String id) {
+        if (statesDataDbRepository.count() == 0) {
+            fetchStatesData();
+        }
+        return statesDataDbRepository.findById(id);
     }
 }
+

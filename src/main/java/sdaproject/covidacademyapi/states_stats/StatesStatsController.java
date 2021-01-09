@@ -4,8 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import sdaproject.covidacademyapi.states_stats.repository.StateCurrentStats;
+import sdaproject.covidacademyapi.single_state_specific_date.service.StateStatsDTO;
 import sdaproject.covidacademyapi.states_stats.service.StateStatsService;
+
+import java.util.List;
 
 @RequestMapping("/states")
 @RestController
@@ -18,7 +20,7 @@ public class StatesStatsController {
     }
 
     @GetMapping
-    public StateCurrentStats[] getCurrentStateStats() {
+    public List<StateStatsDTO> getCurrentStateStats() {
         return stateStatsService.getAllStatesCurrentStats();
     }
 }
