@@ -12,10 +12,12 @@ import sdaproject.covidacademyapi.single_state_specific_date.feature.SingleState
 @RestController
 public class SingleStateController {
     private final SingleStateService singleStateService;
+
     @Autowired
     public SingleStateController(SingleStateService singleStateService) {
         this.singleStateService = singleStateService;
     }
+
     @GetMapping("/{state}/{date}")
     public SingleStateDateStats getSpecificStateStats(@PathVariable String state, @PathVariable String date) {
         return singleStateService.getSpecificStateDateStats(state, date);

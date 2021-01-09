@@ -9,15 +9,16 @@ import sdaproject.covidacademyapi.single_state_specific_date.repository.Specific
 @Repository
 public class SpecificTrackingApiRepository implements SpecificTrackingApi {
 
-        private final String url;
-        private final RestTemplate restTemplate;
+    private final String url;
+    private final RestTemplate restTemplate;
 
-        public SpecificTrackingApiRepository(RestTemplate restTemplate, @Value("${specifictrackingapi.url}") String url) {
-            this.url = url;
-            this.restTemplate = restTemplate;
-        }
-        @Override
-        public SingleStateDateStats getSpecificStateDateStats(String state, String date) {
-            return restTemplate.getForObject(String.format(url, state, date), SingleStateDateStats.class);
-        }
+    public SpecificTrackingApiRepository(RestTemplate restTemplate, @Value("${specifictrackingapi.url}") String url) {
+        this.url = url;
+        this.restTemplate = restTemplate;
+    }
+
+    @Override
+    public SingleStateDateStats getSpecificStateDateStats(String state, String date) {
+        return restTemplate.getForObject(String.format(url, state, date), SingleStateDateStats.class);
+    }
 }

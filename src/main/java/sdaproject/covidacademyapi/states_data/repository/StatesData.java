@@ -1,5 +1,6 @@
 package sdaproject.covidacademyapi.states_data.repository;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -7,6 +8,7 @@ import javax.persistence.Id;
 public class StatesData {
     @Id
     private String state;
+    @Column(columnDefinition = "LONGTEXT")
     private String covid19Site;
     private String twitter;
     private String name;
