@@ -29,10 +29,12 @@ public class StatesDataService {
         List<StatesData> statesData = Arrays.asList(statesDataApi.getAllStatesData());
         return statesDataDbRepository.saveAll(statesData);
     }
+
     private List<StatesData> fetchStatesData() {
         List<StatesData> statesData = Arrays.asList(statesDataApi.getAllStatesData());
         return statesDataDbRepository.saveAll(statesData);
     }
+
     public Optional<StatesData> getStatesByName(String name) {
         if (statesDataDbRepository.count() == 0) {
             fetchStatesData();

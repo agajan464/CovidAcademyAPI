@@ -27,10 +27,9 @@ public class SingleStateService {
     }
 
 
-
     public SingleStateDateStats getSpecificStateDateStats(String state, String date) {
         List<StatesData> statesData = statesDataService.getAllStatesData();
-        String acronym = statesDataService.getStatesByName(state).orElseThrow(()->new IllegalArgumentException()).getState();
+        String acronym = statesDataService.getStatesByName(state).orElseThrow(() -> new IllegalArgumentException()).getState();
         return specificTrackingApi.getSpecificStateDateStats(acronym, date);
     }
 }
