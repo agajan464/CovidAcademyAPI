@@ -23,7 +23,7 @@ public class SingleStateService {
 
 
     public StateStatsDTO getSpecificStateDateStats(String state, String date) {
-        StatesData statesData = statesDataService.getStatesByName(state).<IllegalArgumentException>orElseThrow(IllegalArgumentException::new);
+        StatesData statesData = statesDataService.getStatesByName(state).<IllegalArgumentException>orElseThrow(() -> {throw new IllegalArgumentException(state); });
         String acronym = statesData.getState();
         SingleStateDateStats stateStats = specificTrackingApi.getSpecificStateDateStats(acronym, date);
         return stateStatsTransformer.transformToDTO(stateStats, statesData);
